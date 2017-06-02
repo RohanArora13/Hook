@@ -10,6 +10,10 @@
 
 An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple Trainer GTA 5 Mods
 
+## Dowlaod (.exe)
+- link 1
+- link 2
+
 ## Disclaimer
 All This Mods Belong To Their Respective Owners. This Program only makes installation of this mods bit easier
 - More info about mods at:
