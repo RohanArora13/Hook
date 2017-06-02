@@ -52,8 +52,7 @@ except:
 
 #print the version of script hooks
 print"Script Hook V "+str(SH)+"             "+"Script Hook V .NET "+str(SHN)+"             "+" Simple Trainer "+str(ST)
-print"All This Mods Belong To Their Respective Owner  "
-print"More info about mods at: \n https://www.gta5-mods.com/tools/script-hook-v \n https://www.gta5-mods.com/tools/scripthookv-net \n https://www.gta5-mods.com/scripts/simple-trainer-for-gtav"
+
 print"________________________________________________________________________________________________________"
 
 
