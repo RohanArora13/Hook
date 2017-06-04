@@ -15,7 +15,7 @@ An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple 
 - [GTAinsider.com](http://www.gtainside.com/en/gta5/tools/105889-hook-installer/) (GTA 5 Mods Site)
 
 ## Features
-- Installs latest Updates
+- Always Installs latest Updates
 - Fool Proof ! One Click Install
 - Online Installer
 
@@ -37,8 +37,9 @@ An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple 
 ## Change Log 
 ### V1.2.0
 - New Window Selection
-- super Fast Download 
-- 2nd Download Method ( if 1st fail)
+- Added Progress Bar
+- Faster Download 
+- 2 Download Methods
 - Fixed Error and Bugs
 - Message is displayed on new update available  
 
