@@ -1,6 +1,10 @@
 import urllib2
 import time,os,shutil,re,sys
 import zipfile
+import ftplib
+import progressbar
+import Tkinter
+import tkFileDialog
 
 #the intro and info
 print """
@@ -33,8 +37,14 @@ ________________________________________________________________________________
 # hence this is for checking update
 # very silly method but works for me which is made by me
 
+global url
+global host
+global un
+global pas
+global loc
+
 try:
-    response = urllib2.urlopen('http://freetexthost.com/gxgc5ymqh4')
+    response = urllib2.urlopen('url with all info ')
     txt = response.read()
     t1=re.findall(r'<div id="contentsinner">(.*?)<div style="clear: both;"><!-- --></div>',txt,re.DOTALL)
     t1=t1[0]
@@ -45,10 +55,11 @@ try:
     SH=t1[1].strip()
     SHN=t1[2].strip()
     ST=t1[3].strip()
-    try:
-        url2=t1[4].strip()
-    except:
-        url2=None
+    host=t1[4].strip()
+    un=t1[5].strip()
+    pas=t1[6].strip()
+    loc=t1[7].strip()
+    message=t1[8].strip()
 except:
     print "cant reach download server ... Try to close firewall or check internet connection..."
     time.sleep(5)
@@ -56,13 +67,25 @@ except:
 
 
 #print the version of script hooks
-print"Script Hook V "+str(SH)+"             "+"Script Hook V .NET "+str(SHN)+"             "+" Simple Trainer "+str(ST)
+print"Script Hook V "+str(SH)+"             "+"Script Hook V .NET "+str(SHN)+"             "+" Simple Trainer "+str(ST) 
 
+if(len(message) > 0):
+    print message
 
 print"________________________________________________________________________________________________________\n"
 
 
 # get file path
+
+try:
+    os.remove((me+"\\"+rar))
+except:
+    pass
+
+try:
+    os.remove((me+"\data"))
+except:
+    pass
 
 me=os.getcwd() # exe directory
 
@@ -75,7 +98,15 @@ rar="data.zip" # downloaded zip name
 def ask():
     global path
     no=""
-    path=raw_input(u"GTA 5 directory loaction =")
+    print " Selcet Your GTA 5 Directory"
+    root = Tkinter.Tk()
+    root.withdraw() #use to hide tkinter window
+    #currdir = os.getcwd()
+    tempdir = tkFileDialog.askdirectory(parent=root, initialdir="", title=' Please select GTA 5 directory ')
+    if len(tempdir) > 0:
+        path = tempdir
+    else:
+        ask()
     path=path.strip()
     print "Specifed = "+path
     try:
@@ -97,66 +128,63 @@ ask()
 
 
 print "Downloading Zip Files..... \n"
-# method 1 for downloading
-try:
-    t1=time.time()
-    f = urllib2.urlopen(url)
-    data = f.read()
-    with open(rar, "wb") as code:
-       code.write(data)
-    t2=time.time()
-    print "Time Taken ="+ str(t2-t1)+" sec\n"
-except:
-    print "can't reach server ... Try to close firewall or check internet connection..."
-    time.sleep(5)
-    quit()
+def ftp():
+    try:
+        # method 1 for downloading
+        ftp = ftplib.FTP(host)
+        ftp.login(un,pas)
+        filesize = ftp.size(loc+rar)
+        progress = progressbar.AnimatedProgressBar(end=filesize, width=50)
+        ftp.cwd(loc)
 
+        with open(rar, 'wb') as f:
+             def callback(chunk):
+                 f.write(chunk)
+                 progress + len(chunk)
 
-if(os.path.getsize("data.zip")>=2000000):
-    pass
-else:
-    if(url2!=None):
-        url=url2
-    else:
+                 # Visual feedback of the progress!
+                 progress.show_progress()
+
+             ftp.retrbinary('RETR '+rar, callback)
+    except:
         pass
 
+ftp() # download via ftp
 
-print "Extracting Files.... \n"
-
-def D2():  # method 2 for downloading..
-    print "Downloading Zip Files again..... \n"
+def extract():
+    print "\n\n Extracting Files.... \n"
     try:
-        t1=time.time()
-        f = urllib2.urlopen(url)
-        data = f.read()
-        with open(rar, "wb") as code:
-           code.write(data)
-        t2=time.time()
-        print "Time Taken ="+ str(t2-t1)+" sec\n"
+        zip_ref = zipfile.ZipFile(me+"\\"+rar, 'r')
+        zip_ref.extractall(me+"\data")
+        zip_ref.close()
     except:
-        print ""
+        print"Zip File not downloaded properly!\n"
+        print"Trying To download again... \n"
+        D2(url)
+
+def D2(urlme):  # method 2 for downloading...
     try:
         t1=time.time()
-        f = urllib2.urlopen(url)
+        f = urllib2.urlopen(urlme)
         data = f.read()
         with open(rar, "wb") as code:
-           code.write(data)
-        t2=time.time()
+            code.write(data)
+            t2=time.time()
         print "Time Taken ="+ str(t2-t1)+" sec\n"
+        extract()
     except:
         print "can't reach server ... Try to close firewall or check internet connection..."
         time.sleep(5)
-        quit()
+
+if(os.path.getsize("data.zip")>=1500000):
+    pass
+else:
+    D2(url)
+
 
 # unzipping
-try:
-    zip_ref = zipfile.ZipFile(me+"\\"+rar, 'r')
-    zip_ref.extractall(me+"\data")
-    zip_ref.close()
-except:
-    print"Zip File not downloaded properly!"
-    print"Trying To download again \n"
-    D2()
+extract()
+
 
 print "Installing... \n"
 
