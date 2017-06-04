@@ -27,10 +27,10 @@ An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple 
 
 ## Screenshot
 
-#### Select GTA 5 folder & hit OK
+### Select GTA 5 folder & hit OK
 ![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/1%20screen%20shot%20Hook%20Installer.png)
 
-#### if all goes right you should see " Finished... "
+### if all goes right you should see " Finished... "
 
 ![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/3%20screen%20shot%20Hook%20Installer.png)
 
