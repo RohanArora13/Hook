@@ -21,7 +21,7 @@ An Software which installs Script Hook V , Script Hook V .NET , Simple Trainer G
 
 ## Installation
 - Run the program "hook installer.exe"
-- choose your GTA 5 directory path
+- choose your GTA 5 directory 
 - Hit OK button !
 - ALL done!  Enjoy :)
 
