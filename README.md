@@ -27,11 +27,12 @@ An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple 
 
 ## Screenshot
 
-#### Enter GTA 5 folder path & hit enter
-![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/1.png)
+#### Select GTA 5 folder & hit OK
+![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/1%20screen%20shot%20Hook%20Installer.png)
 
 #### if all goes right you should see " Finished... "
-![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/2.png)
+
+![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/3%20screen%20shot%20Hook%20Installer.png)
 ## Disclaimer
 All This Mods Belong To Their Respective Owners. This Program only makes installation of this mods bit easier
 - More info about mods at:
