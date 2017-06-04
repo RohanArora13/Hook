@@ -12,7 +12,7 @@ An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple 
 
 ## Dowlaod (.exe)
 - [link 1](https://drive.google.com/open?id=0B2rWbX6AF06hTXZhdjZxNUE5Z2c) (Google Drive)
-- [link 2] (Soon)
+- [GTAinsider.com](http://www.gtainside.com/en/gta5/tools/105889-hook-installer/) (GTA 5 Mods Site)
 
 ## Features
 - Installs latest Updates
