@@ -33,6 +33,20 @@ An Software Which helps to install  Script Hook V , Script Hook V .NET , Simple 
 #### if all goes right you should see " Finished... "
 
 ![alt text](https://raw.githubusercontent.com/RohanArora13/Hook/master/screenshot/3%20screen%20shot%20Hook%20Installer.png)
+
+## Change Log 
+### V1.2.0
+- New Window Selection
+- super Fast Download 
+- 2nd Download Method ( if 1st fail)
+- Fixed Error and Bugs
+- Message is displayed on new update available  
+
+
+### V1.1.0
+- Download file with url
+- Fixed Bugs
+
 ## Disclaimer
 All This Mods Belong To Their Respective Owners. This Program only makes installation of this mods bit easier
 - More info about mods at:
